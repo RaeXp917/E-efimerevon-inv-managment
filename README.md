@@ -51,7 +51,7 @@ _Screenshots will go here:_
 Integrated into the desktop app as a **one-click launch**.
 
 **What it demonstrates:**
-- **Local face recognition** (on-device, no cloud upload)
+- **Local face recognition**
 - **Live camera preview**
 - Optional **attendance check-in / event log**
 
