@@ -2,7 +2,6 @@
 
 This is a **visual and conceptual overview** of the pharmacy platform I built.  
 
-
 The goal of the system was simple:
 > **Help people quickly find an on-duty pharmacy and know if the medicine they need is actually available.**
 
@@ -26,7 +25,11 @@ A simple, accessible mobile app designed for **any age** to use — from “5 ye
 Citizens **only see counts.**  
 No drawer numbers, no stockroom details, no employee data.
 
-_Screenshots will go here:_
+**Screenshots:**
+
+| Map View | App Menu | Login Screen |
+|---|---|---|
+| ![Map](media/screenshots/01_android_map.png) | ![Menu](media/screenshots/02_android_menu.png) | ![Login](media/screenshots/03_android_login.png) |
 
 ---
 
@@ -42,8 +45,11 @@ Used by the pharmacy **staff**.
 The workflow is fast:
 **Scan → Confirm → Stock Updates**
 
-_Screenshots will go here:_
+**Screenshots:**
 
+| Drawer Grid | Inventory Table |
+|---|---|
+| ![Drawers](media/screenshots/04_desktop_drawers.png) | ![Inventory](media/screenshots/05_desktop_inventory.png) |
 
 ---
 
@@ -53,13 +59,10 @@ Integrated into the desktop app as a **one-click launch**.
 **What it demonstrates:**
 - **Local face recognition**
 - **Live camera preview**
-- Optional **attendance check-in / event log**
+- Optional **attendance check-in/event log**
 
 Why it matters:
 This shows how computer vision can enhance workplace tools **without requiring external cloud services**.
-
-_Screenshots will go here:_
-
 
 ---
 
@@ -68,8 +71,7 @@ A small, **server-authoritative** backend ensures **one source of truth**.
 
 Whenever staff updates stock:
 
-Scan → Backend validates → Stock updates → Public mirror updated → Citizen app sees new count
-
+`Scan → Backend validates → Stock updates → Public mirror updated → Citizen app sees new count`
 
 This makes the system:
 - **Consistent**
@@ -91,11 +93,13 @@ So I built a solution that is:
 
 ---
 
-
 ## Contact
 
 **LinkedIn:** https://www.linkedin.com/in/klearxos-xlioumphs/  
 **GitHub:** https://github.com/RaeXp917  
 
+---
 
-
+## License
+Media and documentation © 2025 **Klearxos Xlioumphs**  
+Licensed under **CC BY-NC 4.0** (non-commercial use, attribution required).
