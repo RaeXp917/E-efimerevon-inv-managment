@@ -1,62 +1,101 @@
-# E-efimerevon-inv-managment
+# E-Efimerevon & Inventory Management 
 
-**What it is:** a small, production-style pharmacy platform I built end-to-end:
-- **Citizen Android app (Kotlin/Compose):** map with **on-duty pharmacies** and **live availability** (counts).
-- **Desktop inventory app (JavaFX):** quick **arrivals/sales** via barcode scanners, search, and drawer management (**A–F × 1–6**).
-- **Server (Ktor) + Firestore:** server-authoritative updates and a **public, counts-only mirror** for the mobile app.
-- **Smart Security Camera (JavaFX + OpenCV):** local face recognition demo, launched and embedded from the desktop app.
+This is a **visual and conceptual overview** of the pharmacy platform I built.  
 
-> This repo is a **visual overview** only (no code, no secrets). It exists to show the product flow and design decisions.
 
----
+The goal of the system was simple:
+> **Help people quickly find an on-duty pharmacy and know if the medicine they need is actually available.**
 
-## How it works (90 seconds)
+At the same time:
+> **Pharmacies should be able to update their inventory easily, privately, and with whatever scanner they already have.**
 
-1. **Staff updates stock** on the **desktop app** (Arrival/Sale) using a barcode scanner or a phone scanner.
-2. The **Ktor service** validates the request, runs a Firestore **transaction**, appends an **immutable log**, and **overwrites** the public mirror document.
-3. The **citizen Android app** reads the **public mirror** for the live pharmacy and shows **live counts**.
-4. **Smart Security Camera** can be launched from the desktop app for a check-in/attendance demo and shows live stream + recognition locally.
-
-**Privacy by design:** the mobile app sees **only counts**—**no drawers, no private locations**.
+So the platform is split into **two experiences**:
 
 ---
 
-## Architecture
+## 1) Citizen App (Android · Jetpack Compose)
+A simple, accessible mobile app designed for **any age** to use — from “5 years old to 70 years old”.
 
-```mermaid
-flowchart LR
-  subgraph Staff Desktop (JavaFX)
-    D1[Inventory UI<br/>Arrival/Sale/Adjust]
-    D2[Drawer Grid A–F × 1–6]
-    D3[Scanner Helper QR]
-    D4[Launch Smart Camera]
-  end
+**Features:**
+- **Map** of nearby pharmacies
+- **On-duty / open now** indicators
+- **Live availability counts** (e.g., Panadol: 12)
+- Designed to be **simple**, **readable**, and **stress-free**
 
-  subgraph Smart Camera (Local)
-    C1[JavaFX + OpenCV]
-    C2[Embedded Ktor:<br/>/camera/live.mjpeg,<br/>/events/live,<br/>/train,/recognize]
-  end
+**Privacy consideration:**  
+Citizens **only see counts.**  
+No drawer numbers, no stockroom details, no employee data.
 
-  subgraph Server (Ktor)
-    S1[/POST /inventory/arrival|sale/]
-    S2[Transaction:<br/>validate → update stock → log → overwrite public mirror]
-  end
+_Screenshots will go here:_
 
-  subgraph Firestore (Cloud)
-    F1[(pharmacies/{id}/stock)]
-    F2[(public_stock/{id}<br/>counts-only)]
-  end
+---
 
-  subgraph Citizen Android App (Compose)
-    A1[Map: on-duty pharmacies]
-    A2[Bottom sheet: live counts]
-  end
+## 2) Inventory Desktop App (JavaFX)
+Used by the pharmacy **staff**.
 
-  D1 -->|HTTP| S1
-  D3 -.->|Barcode/Phone URL| S1
-  S1 --> S2 --> F1
-  S2 --> F2
-  A1 -->|read| F2
-  A2 -->|read| F2
-  D4 --> C1
-  C1 --> C2
+**Main capabilities:**
+- Fast **ARRIVAL** and **SALE** updates
+- Works with **barcode scanners** (USB or phone)
+- **Drawer organization** (A–F × 1–6)
+- **Search**, **low-stock highlight**, **multi-language (EN/GR)**
+
+The workflow is fast:
+**Scan → Confirm → Stock Updates**
+
+_Screenshots will go here:_
+
+
+---
+
+## 3) Smart Security Camera (JavaFX + OpenCV)
+Integrated into the desktop app as a **one-click launch**.
+
+**What it demonstrates:**
+- **Local face recognition** (on-device, no cloud upload)
+- **Live camera preview**
+- Optional **attendance check-in / event log**
+
+Why it matters:
+This shows how computer vision can enhance workplace tools **without requiring external cloud services**.
+
+_Screenshots will go here:_
+
+
+---
+
+## 4) The Backend (Ktor + Firestore)
+A small, **server-authoritative** backend ensures **one source of truth**.
+
+Whenever staff updates stock:
+
+Scan → Backend validates → Stock updates → Public mirror updated → Citizen app sees new count
+
+
+This makes the system:
+- **Consistent**
+- **Fast**
+- **Safe to expose to the public**
+
+And it works with **any scanner** → because input is just **HTTP**.
+
+---
+
+## Why I Built It
+When I first moved to Thessaloniki, I found it **hard to know which pharmacy was on duty**, and even harder to know whether they actually had what I needed.
+
+So I built a solution that is:
+- **Easy to use**
+- **Accurate**
+- **Privacy-first**
+- **And works with the hardware pharmacies already have**
+
+---
+
+
+## Contact
+
+**LinkedIn:** https://www.linkedin.com/in/klearxos-xlioumphs/  
+**GitHub:** https://github.com/RaeXp917  
+
+
+
