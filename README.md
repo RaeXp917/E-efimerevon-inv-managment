@@ -1,4 +1,4 @@
-# RX Inventory — Public Showcase
+# E-efimerevon-inv-managment
 
 **What it is:** a small, production-style pharmacy platform I built end-to-end:
 - **Citizen Android app (Kotlin/Compose):** map with **on-duty pharmacies** and **live availability** (counts).
