@@ -18,18 +18,18 @@ A simple, accessible mobile app designed for **any age** to use — from “5 ye
 **Features:**
 - **Map** of nearby pharmacies
 - **On-duty / open now** indicators
-- **Live availability counts** (e.g., Panadol: 12)
+- **Live availability counts**
 - Designed to be **simple**, **readable**, and **stress-free**
 
 **Privacy consideration:**  
 Citizens **only see counts.**  
 No drawer numbers, no stockroom details, no employee data.
 
-**Screenshots:**
+### Screenshots
 
 | Map View | App Menu | Login Screen |
 |---|---|---|
-| ![Map](media/screenshots/01_android_map.png) | ![Menu](media/screenshots/02_android_menu.png) | ![Login](media/screenshots/03_android_login.png) |
+| ![Map](01_android_map.png) | ![Menu](02_android_menu.png) | ![Login](03_android_login.png) |
 
 ---
 
@@ -38,18 +38,18 @@ Used by the pharmacy **staff**.
 
 **Main capabilities:**
 - Fast **ARRIVAL** and **SALE** updates
-- Works with **barcode scanners** (USB or phone)
+- Works with **barcode scanners**
 - **Drawer organization** (A–F × 1–6)
 - **Search**, **low-stock highlight**, **multi-language (EN/GR)**
 
-The workflow is fast:
+The workflow is:
 **Scan → Confirm → Stock Updates**
 
-**Screenshots:**
+### Screenshots
 
 | Drawer Grid | Inventory Table |
 |---|---|
-| ![Drawers](media/screenshots/04_desktop_drawers.png) | ![Inventory](media/screenshots/05_desktop_inventory.png) |
+| ![Drawers](04_desktop_drawers.png) | ![Inventory](05_desktop_inventory.png) |
 
 ---
 
@@ -59,10 +59,7 @@ Integrated into the desktop app as a **one-click launch**.
 **What it demonstrates:**
 - **Local face recognition**
 - **Live camera preview**
-- Optional **attendance check-in/event log**
 
-Why it matters:
-This shows how computer vision can enhance workplace tools **without requiring external cloud services**.
 
 ---
 
