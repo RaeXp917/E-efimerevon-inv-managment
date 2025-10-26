@@ -1,5 +1,16 @@
 # E-Efimerevon & Inventory Management 
 
+This repository is a **demonstration showcase** of a small, integrated pharmacy platform I built — combining:
+
+- **Citizen Mobile App** (Android · Kotlin · Jetpack Compose)
+- **Inventory Management Desktop App** (JavaFX)
+- **Smart Security Camera** (JavaFX + OpenCV face recognition)
+- **Backend Service** (Ktor + Firebase Firestore · NoSQL)
+
+All components **work together in real time**, sharing data through a **server-authoritative backend** that maintains a **public-safe mirror** of inventory counts for citizens while keeping private stock details available only to pharmacy staff.
+
+---
+
 This is a **visual and conceptual overview** of the pharmacy platform I built.  
 
 The goal of the system was simple:
@@ -59,7 +70,6 @@ Integrated into the desktop app as a **one-click launch**.
 **What it demonstrates:**
 - **Local face recognition**
 - **Live camera preview**
-
 
 ---
 
