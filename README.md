@@ -38,9 +38,10 @@ No drawer numbers, no stockroom details, no employee data.
 
 ### Screenshots
 
-| Map View | App Menu | Login Screen |
-|---|---|---|
-| ![Map](01_android_map.png) | ![Menu](02_android_menu.png) | ![Login](03_android_login.png) |
+| Map View | App Menu | Login Screen | Pharmacy Details |
+|---|---|---|---|
+| ![Map](01_android_map.png) | ![Menu](02_android_menu.png) | ![Login](03_android_login.png) | ![Details](04_android_details.png) |
+
 
 ---
 
